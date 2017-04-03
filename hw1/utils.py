@@ -128,7 +128,7 @@ class TextLoader():
         print(self.data[:10])
         """
         self.num_data = len(self.data)
-        sefl.num_batches = self.num_data // self.batch_size
+        self.num_batches = self.num_data // self.batch_size
 
     def load_preprocessed(self, vocab_file, data_file):
         with open(vocab_file, 'rb') as f:
