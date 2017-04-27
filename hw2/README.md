@@ -1,4 +1,4 @@
-Sequence to Sequence Model(Encoder-Decoder Model)
+Sequence to Sequence Attetion Model(Encoder-Decoder Model)
 ===
 This is a Video Caption Task solved by a RNN-based sequence-to-sequence model. <br />
 Implemented by tensorflow 1.0
