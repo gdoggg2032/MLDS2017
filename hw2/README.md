@@ -1,6 +1,6 @@
-Convolution Neural Network
+Sequence to Sequence Model(Encoder-Decoder Model)
 ===
-This is a Sentence Completition Challenge solved by a RNN-based sequence-to-sequence language model. <br />
+This is a Video Caption Task solved by a RNN-based sequence-to-sequence model. <br />
 Implemented by tensorflow 1.0
 <br/>
 <br/>
