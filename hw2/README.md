@@ -25,8 +25,7 @@ $ python3 video_caption.py
 For more details, use:
 
 ```
-$ python3 preprocessing2.py --help
-$ python3 rnnlm.py --help
+$ python3 video_caption.py --help
 ```
 
 ##Performance
