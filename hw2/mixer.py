@@ -185,7 +185,13 @@ class MIXER(object):
 			scope.reuse_variables()
 			logit = tf.matmul(input_h_state, W_rein) + b_rein
 
-			word_idx = tf.cond(sample_or_max, lambda: tf.multinomial(logit, 1)[:, 0], lambda: tf.argmax(logit, axis=1))
+			# word_idx = tf.cond(sample_or_max, lambda: tf.multinomial(logit, 1)[:, 0], lambda: tf.argmax(logit, axis=1))
+
+			values, indices = tf.nn.top_k(logit, 3)
+			value_bound = tf.reduce_min(values, axis=1)
+			prob = tf.cast(tf.greater_equal(logit, value_bound), tf.float32)
+
+			word_idx = tf.cond(sample_or_max, lambda: tf.multinomial(prob, 1)[:, 0], lambda: tf.argmax(logit, axis=1))
 
 			rein_input_vector = tf.nn.embedding_lookup(embedding, word_idx)
 			context_vector = attention_construct_fn(input_h_state, attention_keys, attention_values)
@@ -195,7 +201,7 @@ class MIXER(object):
 			scope.reuse_variables()
 			
 			logit = tf.matmul(cell_output, W_rein) + b_rein
-			r = tf.sigmoid(logit)
+			r = logit
 			output_y = tf.argmax(logit, axis=1)
 
 			xent_dict = {

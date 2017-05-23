@@ -28,7 +28,7 @@ tf.flags.DEFINE_integer("encoder_input_len", 80, "encoder input sequence length"
 tf.flags.DEFINE_integer("encoder_input_size", 4096, "encoder input dimension")
 tf.flags.DEFINE_integer("target_model_update_freq", 10, "target update after several epochs")
 tf.flags.DEFINE_integer("min_count", 3, "min word frequency for building vocab")
-tf.flags.DEFINE_integer("replay_capacity", 400000, "replay memory size")
+tf.flags.DEFINE_integer("replay_capacity", 4000000, "replay memory size")
 tf.flags.DEFINE_integer("border_step", 1, "xent_border shift step")
 tf.flags.DEFINE_bool("prioritized_replay", False, "replay prioritized draw batch")
 tf.flags.DEFINE_float("learning_rate", 1e-2, "DQN RMSProp learning rate")
@@ -283,7 +283,7 @@ def train():
 
 					for epoch in range(FLAGS.mix_epochs):
 
-						replay_memory.samples = []
+						# replay_memory.samples = []
 						
 						# first train cross entropy part and add some samples in replay memory
 						loss = run_xent_epoch(epoch, data_manager, model, replay_memory, sess, border, train=False)
