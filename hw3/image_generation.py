@@ -282,6 +282,8 @@ def run_test_epoch(sess, dm, model):
 			logging.info("{}/{}: {}".format(i + 1, len(dm.test_data), img_filename))
 			# imsave(os.path.join(FLAGS.valid_img_dir, img_filename), image)
 			imsave(os.path.join(FLAGS.test_img_dir, img_filename), img_resized)
+		pbar.update(i)
+	pbar.finish()
 
 def test():
 
