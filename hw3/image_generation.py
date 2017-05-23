@@ -242,10 +242,8 @@ def run_test_epoch(sess, dm, model):
 	logging.info(info_output)
 
 	total_batch_num = dm.total_batch_num(FLAGS.batch_size, mode='test')
-	maxval = total_batch_num
-	pbar = pb.ProgressBar(widgets=["[TEST]", pb.FileTransferSpeed(unit="batchs"), pb.Percentage(), pb.Bar(), pb.Timer(), " ", pb.ETA()], maxval=maxval).start()
-	
 
+	
 	for i in range(total_batch_num):
 
 		data, bz = dm.draw_batch(FLAGS.batch_size, FLAGS.z_dim, mode='test')
@@ -282,8 +280,7 @@ def run_test_epoch(sess, dm, model):
 			logging.info("{}/{}: {}".format(i + 1, len(dm.test_data), img_filename))
 			# imsave(os.path.join(FLAGS.valid_img_dir, img_filename), image)
 			imsave(os.path.join(FLAGS.test_img_dir, img_filename), img_resized)
-		pbar.update(i)
-	pbar.finish()
+
 
 def test():
 
