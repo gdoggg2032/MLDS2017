@@ -503,7 +503,7 @@ def make_gif(valid_img_dir, gif_dir, duration=0.5, true_image=True):
 				gifs[gif_name] = []
 			image = skimage.io.imread(os.path.join(valid_img_dir, filename))
 	
-			img_seq_id = int(re.search("(?<=_)[0-9]*(?=.png)", filename).group(0))
+			img_seq_id = int(re.search("(?<=_)[0-9]*(?=.jpg)", filename).group(0))
 			gifs[gif_name].append((img_seq_id, image))
 
 	for k in gifs:
