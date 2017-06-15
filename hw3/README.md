@@ -39,7 +39,7 @@ skimage <br />
 
 ## Usage 
 1. Download hw3 data from data link, place the MLDS_HW3_dataset/(rename it as data) in the same directory and unzip the face.zip in data/
-3. Start training !
+2. Start training !
 
 ## Train
 ```
