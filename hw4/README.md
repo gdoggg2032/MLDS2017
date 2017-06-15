@@ -8,6 +8,8 @@ compare SELU and tanh activation<br />
 ![image](https://github.com/gdoggg2032/MLDS2017/blob/gdog/hw4/assets/activation_exp.png)
 <br />
 
+- [SELU](https://github.com/bioinf-jku/SNNs): Klambauer, Günter, et al. "Self-Normalizing Neural Networks." a  rXiv preprint arXiv:1706.02515 (2017).
+
 compare different models<br />
 ![image](https://github.com/gdoggg2032/MLDS2017/blob/gdog/hw4/assets/leanring_curve.png)
 <br />
@@ -30,7 +32,7 @@ nltk <br />
 ```
 how are you?
 i'm fine
-'''
+```
 
 
 
